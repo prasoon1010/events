@@ -27,9 +27,3 @@ php artisan serve
 ```
 npm run watch
 ```
-
-# Connect with Us
-
--   [Site](https://techvblogs.com/?ref=githubrepo)
--   [Twitter](https://twitter.com/techvblogs)
--   [Facebook](https://facebook.com/techvblogs)

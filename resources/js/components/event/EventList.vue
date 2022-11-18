@@ -22,19 +22,19 @@
                 <tr>
                     <th>Name</th>
                     <th>Start/End Date</th>
-                    <th>Detail</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody v-if="events.length">
                 <tr v-for="event in events" :key="event.id">
                     <td>{{ event.name }}</td>
-                    <td>{{`${event.start_date} TO ${event.end_date}` }}</td>
-                    <td>{{ event.description }}</td>
+                    <td>{{`${event.start_date} to ${event.end_date}` }}</td>
+                    <td><span class="badge rounded-pill bg-success">{{ event.status }}</span></td>
                     <td>
                         <div class="btn-group" role="group">
-                            <router-link :to="{name: 'event-edit', params: { id: event.id }}" class="btn btn-success">Edit</router-link>
-                            <button class="btn btn-danger" @click="deleteEvent(event.id)">Delete</button>
+                            <router-link :to="{name: 'event-edit', params: { id: event.id }}" class="btn btn-info btn-sm">Edit</router-link>&nbsp;&nbsp;
+                            <button class="btn btn-danger btn-sm" @click="deleteEvent(event.id)">Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -47,12 +47,10 @@
             </table>
         </div>
         
-        <!-- <Pagination :params="params" /> -->
     </div>
 </template>
  
 <script>
-    // import Pagination from './Pagination.vue'
 
     export default {
         name: 'EventList',

@@ -20,29 +20,29 @@ class EventController extends BaseCrudController
      }
 
      public function filter($filter){
-      $today = CarbonImmutable::now()->toDateString();
+      $today = CarbonImmutable::now();
          switch ($filter) {
             case 'upcoming':
-                  $this->query->where('start_date','>',$today);
+                  $this->query->where('start_date','>',$today->toDateString());
                break;
 
             case 'finished':
-                  $this->query->where('end_date','<',$today);
+                  $this->query->where('end_date','<',$today->toDateString());
                break;
 
             case 'running':
-                  $this->query->where('start_date','<=',$today)
-                              ->where('end_date','>=',$today);
+                  $this->query->where('start_date','<=',$today->toDateString())
+                              ->where('end_date','>=',$today->toDateString());
             break;
 
             case 'within_7':
-                  $this->query->where('start_date','>',$today)
-                              ->where('start_date','<',$today->addDays(7));
+                  $this->query->where('start_date','>',$today->toDateString())
+                              ->where('start_date','<',$today->addDays(7)->toDateString());
             break;
 
             case 'before_7':
                   $this->query->where('end_date','<',$today)
-                              ->where('end_date','>',$today->subDays(7));
+                              ->where('end_date','>',$today->subDays(7)->toDateString());
             break;
          }
      }

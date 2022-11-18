@@ -11,8 +11,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-// import Pagination from './Pagination.vue'
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'EventList',
   components: {},
@@ -144,13 +142,15 @@ var render = function render() {
   }, [_vm._m(0), _vm._v(" "), _vm.events.length ? _c("tbody", _vm._l(_vm.events, function (event) {
     return _c("tr", {
       key: event.id
-    }, [_c("td", [_vm._v(_vm._s(event.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s("".concat(event.start_date, " TO ").concat(event.end_date)))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(event.description))]), _vm._v(" "), _c("td", [_c("div", {
+    }, [_c("td", [_vm._v(_vm._s(event.name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s("".concat(event.start_date, " to ").concat(event.end_date)))]), _vm._v(" "), _c("td", [_c("span", {
+      staticClass: "badge rounded-pill bg-success"
+    }, [_vm._v(_vm._s(event.status))])]), _vm._v(" "), _c("td", [_c("div", {
       staticClass: "btn-group",
       attrs: {
         role: "group"
       }
     }, [_c("router-link", {
-      staticClass: "btn btn-success",
+      staticClass: "btn btn-info btn-sm",
       attrs: {
         to: {
           name: "event-edit",
@@ -159,8 +159,8 @@ var render = function render() {
           }
         }
       }
-    }, [_vm._v("Edit")]), _vm._v(" "), _c("button", {
-      staticClass: "btn btn-danger",
+    }, [_vm._v("Edit")]), _vm._v("  \n                        "), _c("button", {
+      staticClass: "btn btn-danger btn-sm",
       on: {
         click: function click($event) {
           return _vm.deleteEvent(event.id);
@@ -172,7 +172,7 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Start/End Date")]), _vm._v(" "), _c("th", [_vm._v("Detail")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("Name")]), _vm._v(" "), _c("th", [_vm._v("Start/End Date")]), _vm._v(" "), _c("th", [_vm._v("Status")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;

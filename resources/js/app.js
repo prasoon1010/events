@@ -5,11 +5,13 @@ window.Vue = vue;
 import App from './components/App.vue';
 import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
+import Toast from "vue-toastification"
 import axios from 'axios';
 import {routes} from './routes';
  
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
+Vue.use(Toast);
  
 const router = new VueRouter({
     mode: 'history',
